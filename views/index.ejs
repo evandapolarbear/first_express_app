@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Express App</title>
+</head>
+<body>
+  <h1>HERE WE GO!</h1>
+  <h2>FIRST EVER EXPRESS APP</h2>
+  <h3>Classic CRUD</h3>
+
+  <form action="/list" method="POST">
+    <input type="text" name="task" placeholder="task">
+    <input type="text" name="dueDate" placeholder="due date">
+    <button type="Submit">Submit</button>
+  </form>
+
+  <ul>
+    <% for(var i = 0; i < tasks.length; i++) {%>
+      <li><%=tasks[i].task + " - " + tasks[i].dueDate %></li>
+    <% } %>
+  </ul>
+</body>
+</html>
