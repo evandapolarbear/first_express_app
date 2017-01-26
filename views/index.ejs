@@ -15,10 +15,16 @@
     <button type="Submit">Submit</button>
   </form>
 
+  <button id="update-button">now -> tomorrow</button>
+  <button id="update-now-button">tomorrow -> now</button>
+
   <ul>
+    <li>Task     - Due Date </li>
     <% for(var i = 0; i < tasks.length; i++) {%>
       <li><%=tasks[i].task + " - " + tasks[i].dueDate %></li>
     <% } %>
   </ul>
+
+  <script src="main.js"></script>
 </body>
 </html>
