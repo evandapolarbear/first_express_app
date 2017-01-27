@@ -100,5 +100,9 @@ app.put('/list', (req, res) => {
 });
 
 app.delete('/list', (req, res) =>{
-
+  db.collection('list').remove(
+    {task: req.body.itemToDelete},
+    true
+  );
+  res.send(200);
 });

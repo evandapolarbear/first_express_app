@@ -3,6 +3,7 @@ const dlt = document.getElementsByClassName("delete");
 
 for (var i = 0; i < dlt.length; i++){
   const name = dlt[i].name;
+
   dlt[i].addEventListener('click',() =>{ deleteItem(name); });
 }
 
@@ -34,7 +35,6 @@ function updateDates(oldDate, newDate) {
 }
 
 function deleteItem(name){
-  console.log(name);
   fetch('list', {
     method: "delete",
     headers: {'Content-Type': 'application/json'},
@@ -46,8 +46,7 @@ function deleteItem(name){
       return res.json;
     }
   }).then(jsonData => {
-    console.log("delete fired");
-    // window.location.reload(true);
+    window.location.reload(true);
   });
 }
 //fetch returns a Promise Object
