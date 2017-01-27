@@ -1,4 +1,11 @@
 const update = document.getElementById("update-button");
+const dlt = document.getElementsByClassName("delete");
+
+for (var i = 0; i < dlt.length; i++){
+  const name = dlt[i].name;
+  dlt[i].addEventListener('click',() =>{ deleteItem(name); });
+}
+
 update.addEventListener('click', () => {
   updateDates("now", "tomorrow");
 });
@@ -26,5 +33,21 @@ function updateDates(oldDate, newDate) {
   });
 }
 
-
+function deleteItem(name){
+  console.log(name);
+  fetch('list', {
+    method: "delete",
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      itemToDelete: name
+    }),
+  }).then(res => {
+    if (res.ok) {
+      return res.json;
+    }
+  }).then(jsonData => {
+    console.log("delete fired");
+    // window.location.reload(true);
+  });
+}
 //fetch returns a Promise Object

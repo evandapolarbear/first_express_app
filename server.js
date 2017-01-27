@@ -98,3 +98,7 @@ app.put('/list', (req, res) => {
     }
   );
 });
+
+app.delete('/list', (req, res) =>{
+
+});

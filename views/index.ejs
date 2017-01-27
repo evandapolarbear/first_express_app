@@ -19,9 +19,11 @@
   <button id="update-now-button">tomorrow -> now</button>
 
   <ul>
-    <li>Task     - Due Date </li>
+    <li><h3>Task     - Due Date</h3></li>
     <% for(var i = 0; i < tasks.length; i++) {%>
-      <li><%=tasks[i].task + " - " + tasks[i].dueDate %></li>
+      <li><%=tasks[i].task + " - " + tasks[i].dueDate %>
+      <button class="delete" name="<%= tasks[i].task%>">delete</button>
+      </li>
     <% } %>
   </ul>
 
